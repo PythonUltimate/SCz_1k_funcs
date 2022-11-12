@@ -1,7 +1,7 @@
 import math
 
 
-## Algebra
+## Basic maths
 
 def summation(a, b):
     return a + b
@@ -205,3 +205,29 @@ def sphere_volume(r):
 
 def sphere_area(r):
     return 4 * math.pi * r ** 2
+
+
+def pitagoras_equation(a, b):
+    c = math.sqrt(a ** 2 + b ** 2)
+    return c
+
+
+def tales_law(x, y, k):
+    l = k * x / y
+    return l
+
+
+def change_to_percentage(division):
+    return f'{division * 100}%'
+
+
+def change_to_num_by_proportion(value, base):
+    return f'{100 * value / base}%)'
+
+
+def increase_by_percent(base_value, percent):
+    return (percent / 100 + 1) * base_value
+
+
+def decrease_by_percent(base_value, percent):
+    return (1 - percent / 100) * base_value
