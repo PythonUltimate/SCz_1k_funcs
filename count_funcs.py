@@ -1,5 +1,5 @@
 
-files = ['funcs_100.py', 'funcs_200.py']
+files = ['quik_maffs.py', 'basic_economics.py', 'converters.py']
 
 counter = 0
 

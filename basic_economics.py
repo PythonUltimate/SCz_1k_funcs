@@ -139,6 +139,10 @@ def mew(gdp, leisure, unpaid_work, envir_damage):
     return gdp + leisure - unpaid_work - envir_damage
 
 
+def cobb_douglass_production(technology, capital, labour, alpha):
+    return technology * capital ** alpha * labour ** (1 - alpha)
+
+
 def unemployment_rate(num_unemployed, active_on_labor_market):
     return num_unemployed / active_on_labor_market * 100
 
@@ -147,8 +151,28 @@ def employment_rate(total_employed, workforce):
     return total_employed / workforce * 100
 
 
+def labor_force_participation(total_employed, work_seekers, work_age_population):
+    return (total_employed + work_seekers) * 100 / work_age_population
+
+
+def keynesian_multiplier(mpc):
+    return 1 / (1 - mpc)
+
+
+def macro_consumption_function(income, taxes, autonomous_consumption, mpc):
+    return autonomous_consumption + mpc * (income - taxes)
+
+
 def money_multiplier(reserve_ratio):
     return 1 / reserve_ratio
+
+
+def government_multiplier(mpc, delta_gov_spending):
+    return delta_gov_spending / (1 - mpc)
+
+
+def investment_multiplier(mps, delta_investments):
+    return delta_investments / mps
 
 
 def cpi(costs_year1, costs_base_year):
@@ -165,3 +189,108 @@ def real_interest_rate(interest_rate, antic_inflation):
 
 def money_from_fischer_equation(velocity, price_level, gdp):
     return price_level * gdp / velocity
+
+
+def roi(taxed_oper_profit, investment_value):
+    return taxed_oper_profit / investment_value * 100
+
+
+def roe(net_profit, own_capital_input):
+    return net_profit / own_capital_input * 100
+
+
+def roa(net_profit, total_assets):
+    return net_profit / total_assets
+
+
+def gross_profit_margin(gross_profit, net_sales):
+    return gross_profit / net_sales
+
+
+def operating_profit_margin(operating_profit, net_sales):
+    return operating_profit / net_sales
+
+
+def ebit_margin(ebit, net_sales):
+    return ebit / net_sales
+
+
+def net_profit_margin(net_profit, net_sales):
+    return net_profit / net_sales
+
+
+def asset_turnover(net_sales, total_sales):
+    return net_sales / total_sales
+
+
+def fixed_asset_turnover(net_sales, fixed_assets):
+    return net_sales / fixed_assets
+
+
+def price_earnings_ratio(stock_price, earning_per_share):
+    return stock_price / earning_per_share
+
+
+def reverse_pe_ratio(earning_per_share, stock_price):
+    return earning_per_share / stock_price
+
+
+def return_period(input, final_value, depreciation, avg_year_net_profit):
+    return (input - final_value) / (depreciation + avg_year_net_profit)
+
+
+def npv(positive_cash_flow, negative_cash_flow, discount_rate, reinvestment_rate, time_periods, investment_time):
+    return positive_cash_flow * (1 + reinvestment_rate) ** (investment_time - time_periods) / (
+            1 + discount_rate) ** time_periods - negative_cash_flow
+
+
+def current_liquidity(current_assets, current_liabilities):
+    return current_assets / current_liabilities
+
+
+def liquidity_quick_ratio(current_assets, inventory, current_liabilities):
+    return (current_assets - inventory) / current_liabilities
+
+
+def leverage_debt_ratio(total_liabilities, total_assets):
+    return total_liabilities / total_assets
+
+
+def leverage_debt_interest_ratio(total_liabilities, minority_interest, total_assets):
+    return (total_liabilities + minority_interest) / total_assets
+
+
+def debt_to_worth_ratio(total_liabilities, shareholders_equity):
+    return total_liabilities / shareholders_equity
+
+
+def equity_ratio(shareholders_equity, total_assets):
+    return shareholders_equity / total_assets
+
+
+def debt_to_tangible_net_worth(total_liabilities, tangible_net_worth):
+    return total_liabilities / tangible_net_worth
+
+
+def interest_coverage(ebit, interest_expense):
+    return ebit / interest_expense
+
+
+def fixed_charge_coverage(ebit, interest_expense, cmltd):
+    return ebit / (interest_expense + cmltd)
+
+
+def cash_flow_coverage(net_income, depreciation, cmltd):
+    return (net_income + depreciation) / cmltd
+
+
+def operating_cashflow_ratio(operating_cashflow, current_liabilities):
+    return operating_cashflow / current_liabilities
+
+
+def gross_asset_rotation(net_sales, total_assets):
+    return net_sales / total_assets
+
+
+def dividend_yield(dividend_per_share, market_price_per_share):
+    return dividend_per_share / market_price_per_share
