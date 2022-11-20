@@ -5,6 +5,7 @@
 txt = 'Zyrafy wchodza do szafy\nPawiany wchodza na sciany'
 txt1 = 'Zyrafy wchodza do szafy'
 txt2 = 'Pawiany wchodza na sciany'
+ftxt = 'Elo, to jest numer {}'
 
 
 def concatenate(first_name, last_name):
@@ -208,6 +209,74 @@ def check_if_all_decimals(txt):
     return txt.isdecimal()
 
 
-print(check_if_all_decimals('123a'))
+def check_if_ascii(txt):
+    return txt.isascii()
+
+
+def check_if_alpha(txt):
+    return txt.isalpha()
+
+
+def check_if_alnum(txt):
+    return txt.isalnum()
+
+
+def check_index(txt, sign):
+    return txt.index(sign)
+
+
+def check_index_no_traceback(txt, sign):
+    return txt.find(sign)
+
+
+def insert_to_txt(ftxt, num):
+    return ftxt.format(num)
+
+
+def insert_to_text_with_spaces(signs):
+    return "Some text with {:^10} data.".format(signs)
+
+
+def insert_comma_as_sep(num):
+    return 'this is some high number: {:,}'.format(num)
+
+
+def insert_underscore_as_sep(num):
+    return 'this is some high number: {:_}'.format(num)
+
+
+def find_binary_version_of_num(num):
+    return 'The binary version of number is {:b}'.format(num)
+
+
+def format_num_to_percentage(num):
+    return 'the percentage is: {:.0%}'.format(num)
+
+
+def expand_text(txt, size):
+    return txt.expandtabs(size)
+
+
+def check_if_endswith(txt, value):
+    return txt.endswith(value)
+
+
+def count_occurencies(txt, sign):
+    return txt.count(sign)
+
+
+def center_some_string(txt, signs):
+    return txt.center(signs)
+
+
+def center_some_string_with_custom_signs(txt, signs, elo):
+    return txt.center(signs, elo)
+
+
+def make_lower_with_casefold(txt):
+    return txt.casefold()
+
+
+print(make_lower_with_casefold(txt))
 
 print(dir(str))
