@@ -3,7 +3,7 @@ import math
 import statistics
 
 iterable = ['ala', 'elo', 'nictam', '   ', '123']
-numeric_iterable = [45, 9, 62, 79, 3, 14]
+numeric_iterable = [45, 9, 62, 79, 3]
 
 
 class Elo:
@@ -428,6 +428,49 @@ def sort_list_reversed(iterable):
 def sort_list_key(iterable):
     return sorted(iterable, key=lambda x: x[-1])
 
-x = sort_list_key(iterable)
+
+def make_string(obj):
+    return repr(str(obj))
+
+
+def getsum(iterable):
+    return sum(iterable)
+
+
+def getsum_with_start_value(iterable, start):
+    return sum(iterable, start)
+
+
+def make_tuple(iterable):
+    return tuple(iterable)
+
+
+def get_type_of_object(obj):
+    return type(obj)
+
+
+def get_dict_of_object(obj):
+    return vars(obj)
+
+
+def zip_iterator(iterable1, iterable2):
+    x = zip(iterable1, iterable2)
+    for item in x:
+        print(item)
+    return x
+
+
+def check_all_and_print(iterable):
+    if all(iterable):
+        for elem in iterable:
+            print(elem)
+
+
+def get_methods_and_vals_of_obj(obj):
+    print(dir(obj))
+    print(vars(obj))
+
+x = get_methods_and_vals_of_obj(Ola)
 
 print(x)
+
