@@ -1,12 +1,19 @@
 ## Built in methods
+import math
+import statistics
 
-iterable = ['ala', 'elo', 'nictam', '', '123']
+iterable = ['ala', 'elo', 'nictam', '   ', '123']
+numeric_iterable = [45, 9, 62, 79, 3, 14]
 
 
 class Elo:
     elo = 'tam'
     heja = 'bye'
     age = 90
+
+
+class Ola(Elo):
+    trele = 'morele'
 
 
 def make_absolute_num(num):
@@ -97,6 +104,7 @@ def filter_truthies(iterable):
         print(elem)
     return x
 
+
 def filter_falsies(iterable):
     x = filter(lambda x: not bool(x), iterable)
     for elem in x:
@@ -174,6 +182,252 @@ def filter_callable(iterable):
     return new_list
 
 
-x = filter_falsies(iterable)
+def turn_into_float(num):
+    return float(num)
+
+
+def format_into_percent(num):
+    return format(num, '%')
+
+
+def format_into_decimal(num):
+    return format(num, 'd')
+
+
+def format_into_binary(num):
+    return format(num, 'b')
+
+
+def format_with_comma(num):
+    return format(num, ',')
+
+
+def format_with_underscore(num):
+    return format(num, '_')
+
+
+def create_frozenset(iterable):
+    return frozenset(iterable)
+
+
+def print_globals():
+    return globals()
+
+
+def make_hash(sign):
+    return hash(sign)
+
+
+def get_help():
+    return help()
+
+
+def get_hexadecimal_value(num):
+    return hex(num)
+
+
+def get_id_of_object(obj):
+    return id(obj)
+
+
+def get_some_input():
+    return input('What to you want to say?')
+
+
+def make_integer(num):
+    return int(num)
+
+
+def check_if_isinstance(obj, what):
+    return isinstance(obj, what)
+
+
+def check_if_subclass(obj, class_):
+    return issubclass(obj, class_)
+
+
+def return_iterator(iterable):
+    return iter(iterable)
+
+
+def get_len_of_obj(obj):
+    return len(obj)
+
+
+def make_list(obj):
+    return list(obj)
+
+
+def get_locals():
+    return locals()
+
+
+def map_to_id(iterable):
+    new = map(id, iterable)
+    for item in new:
+        print(item)
+    return new
+
+
+def map_to_hash(iterable):
+    new = map(hash, iterable)
+    for item in new:
+        print(item)
+    return new
+
+
+def map_to_square(iterable):
+    new = map(lambda x: x ** 2, iterable)
+    for item in new:
+        print(item)
+    return new
+
+
+def map_to_square_root(iterable):
+    new = map(math.sqrt, iterable)
+    for item in new:
+        print(item)
+    return new
+
+
+def map_to_exponential(iterable):
+    new = map(math.exp, iterable)
+    for item in new:
+        print(item)
+    return new
+
+
+def map_to_factorial(iterable):
+    new = map(math.factorial, iterable)
+    for item in new:
+        print(item)
+    return new
+
+
+def map_to_log(iterable):
+    new = map(math.log, iterable)
+    for item in new:
+        print(item)
+    return new
+
+
+def map_to_len(iterable):
+    new = map(len, iterable)
+    for item in new:
+        print(item)
+    return new
+
+
+def map_to_memoryview(iterable):
+    new = map(memoryview, iterable)
+    for item in new:
+        print(item)
+    return new
+
+
+def get_min_item(iterable):
+    return min(iterable)
+
+
+def get_max_item(iterable):
+    return max(iterable)
+
+
+def create_empty_object():
+    return object()
+
+
+def map_to_octals(iterable):
+    new = map(oct, iterable)
+    for item in new:
+        print(item)
+    return new
+
+
+def map_to_char(iterable):
+    new = map(ord, iterable)
+    for item in new:
+        print(item)
+    return new
+
+
+def rise_ro_power(a, b):
+    return pow(a, b)
+
+
+def rise_to_power_with_modulo(a, b, c):
+    return pow(a, b, c)
+
+
+def print_arguments(*args):
+    print(*args)
+
+
+def create_sequence(num):
+    x = range(num)
+    return list(x)
+
+
+def create_sequence_with_custom_start(start, stop):
+    x = range(start, stop)
+    return list(x)
+
+
+def create_sequence_with_step(start, stop, step):
+    x = range(start, stop, step)
+    return list(x)
+
+
+def get_reversed_iterator(iterable):
+    new = reversed(iterable)
+    for item in new:
+        print(item)
+    return new
+
+
+def round_to_full_digit(num):
+    return round(num)
+
+
+def round_with_decimal_places(num, dec):
+    return round(num, dec)
+
+
+def create_set(args):
+    return set(args)
+
+
+def create_set_from_map(args):
+    new_set = set(map(math.log, args))
+    return new_set
+
+
+def slice_list(iterable, num):
+    a = slice(num)
+    return iterable[a]
+
+
+def slice_list_start_stop(iterable, start, stop):
+    a = slice(start, stop)
+    return iterable[a]
+
+
+def slice_list_with_step(iterable, start, stop, step):
+    a = slice(start, stop, step)
+    return iterable[a]
+
+
+def sort_list(iterable):
+    return sorted(iterable)
+
+
+def sort_list_reversed(iterable):
+    return sorted(iterable, reverse=True)
+
+
+def sort_list_key(iterable):
+    return sorted(iterable, key=lambda x: x[-1])
+
+x = sort_list_key(iterable)
 
 print(x)
