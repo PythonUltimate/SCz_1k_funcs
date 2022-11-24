@@ -2,6 +2,7 @@
 
 import copy
 import math
+import random
 import statistics
 from functools import reduce
 
@@ -326,8 +327,126 @@ def count_str_in_arr(arr):
     return sum(1 for elem in arr if isinstance(elem, str))
 
 
+def make_all_str(arr):
+    return list(map(lambda x: str(x), arr))
 
 
-l = count_str_in_arr(mixed_arr)
+def make_all_str_and_concatenate(arr):
+    return " ".join(list(map(lambda x: str(x), arr)))
+
+
+def make_all_str_and_sort(arr):
+    return sorted(list(map(lambda x: str(x), arr)))
+
+
+def make_all_str_and_sort_reverse(arr):
+    return sorted(list(map(lambda x: str(x), arr)), reverse=True)
+
+
+def insert_spaces(arr):
+    new_list = []
+    for elem in arr:
+        word = ''
+        for letter in elem:
+            letter += ' '
+            word += letter
+        new_list.append(word)
+    return new_list
+
+
+def eliminate_vovels(arr):
+    new_list = []
+    for elem in arr:
+        word = ''
+        for letter in elem:
+            if letter in 'aeiouy':
+                letter = ''
+            word += letter
+        new_list.append(word)
+    return new_list
+
+
+def make_only_ints(arr):
+    return [elem if isinstance(elem, int) else len(elem) for elem in arr]
+
+
+def random_choice(arr):
+    return random.choice(arr)
+
+
+def random_choices(arr, num):
+    return random.choices(arr, k=num)
+
+
+def shuffle_list(arr):
+    random.shuffle(arr)
+    return arr
+
+
+def generate_random_int_to_list():
+    return [random.randint(0, 9) for _ in range(10)]
+
+
+def generate_custom_int_list(start, stop, num):
+    return [random.randint(start, stop + 1) for _ in range(num)]
+
+
+def get_random_elem(arr):
+    return arr.pop(random.randint(0, len(arr)))
+
+
+def eliminate_random_elem(arr):
+    arr.pop(random.randint(0, len(arr) - 1))
+    return arr
+
+
+def eliminate_items_with_letter(arr, sign):
+    return list(filter(lambda x: sign not in x, arr))
+
+
+def eliminate_items_without_letter(arr, sign):
+    return list(filter(lambda x: sign in x, arr))
+
+
+def extend_list_with_random_nums(arr):
+    arr.append(random.randint(0, 100))
+    return arr
+
+
+def extend_list_with_random_nums_x_times(arr, x):
+    for i in range(0, x):
+        arr.append(random.randint(0, 100))
+    return arr
+
+
+def russian_roulette_list(arr):
+    a = random.randint(0, 6)
+    if a == 0:
+        arr.clear()
+    else:
+        arr.append(a)
+    return arr
+
+
+def all_modulos(arr, num):
+    return list(map(lambda x: x % num, arr))
+
+
+def all_floor_divisions(arr, num):
+    return list(map(lambda x: x // num, arr))
+
+def round_divisions(arr, num):
+    return list(map(lambda x: round(x/num), arr))
+
+
+def get_hash_of_elems(arr):
+    return list(map(lambda x: hash(x), arr))
+
+
+def get_id_of_elems(arr):
+    return list(map(lambda x: id(x), arr))
+
+
+l = get_id_of_elems(arr_words)
 
 print(l)
