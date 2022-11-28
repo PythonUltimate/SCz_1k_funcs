@@ -1,5 +1,13 @@
 
-files = ['quik_maffs.py', 'basic_economics.py', 'converters.py', 'string_methods.py', 'builtins.py', 'list_methods.py']
+files = [
+    'quik_maffs.py',
+    'basic_economics.py',
+    'converters.py',
+    'string_methods.py',
+    'builtins.py',
+    'list_methods.py',
+    'dict_methods.py',
+]
 
 counter = 0
 
