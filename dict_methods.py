@@ -158,15 +158,24 @@ def generate_dict_from_range(num):
     return {key: None for key in range(num)}
 
 
-def generate_dict_with_string_values(amount):
-    return {key: 'elo' for key in range(amount)}
+def generate_dict_with_string_values(amount, string):
+    return {key: string for key in range(amount)}
 
 
 def generate_dict_with_powers(amount):
     return {key: key ** 2 for key in range(amount)}
 
 
-d = generate_dict_with_powers(10)
+def filter_false_values(dict):
+    return {filter(lambda x: dict[x] == False, dict.keys())}
+
+
+def simple_loop(dict):
+    for key in dict.keys():
+        print(key)
+
+
+d = simple_loop(person)
 
 print(d)
 

@@ -7,6 +7,9 @@ files = [
     'builtins.py',
     'list_methods.py',
     'dict_methods.py',
+    'tuple_methods.py',
+    'set_methods.py',
+    'datetime_funcs.py',
 ]
 
 counter = 0
