@@ -10,6 +10,7 @@ files = [
     'tuple_methods.py',
     'set_methods.py',
     'datetime_funcs.py',
+    'numpy_examples.py',
 ]
 
 counter = 0
