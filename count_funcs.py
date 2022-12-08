@@ -11,6 +11,7 @@ files = [
     'set_methods.py',
     'datetime_funcs.py',
     'numpy_examples.py',
+    'os_sys_modues.py',
 ]
 
 counter = 0
